@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+  box-shadow: 3px 3px blue, -1em 0 0.4em black;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*HL7Validator CSS below*/
+
+textarea {
+  width: 700px;
+  height: 260px;
+}
+
+/*temp*/
+h1 {
+  margin-right: 100px;
+}
+
+#useful-utilities {
+  float: left;
+  margin: 100px;
+  padding: 25px;
+  width: 200px;
+  height: 200px;
+  background: lightblue;
+  border: 2px solid black;
+}
+
+#container {
+  margin-right: 380px;
+}
+
+#results {
+  text-align: left;
+  margin-left: 415px;
+  background: lightyellow;
+  padding-left: 50px;
+}
+
+#severity-score-display {
+  color: red;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  text-align: left;
+}
+
+button {
+  margin: 10px;
+  height: 30px;
+  font-size: 14px;
+}
