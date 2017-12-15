@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import checker from '../checker.js';
+import ResultsDisplay from './results_display';
 
 export default class HL7Validator extends Component {
 	constructor(props) {
@@ -44,7 +45,7 @@ export default class HL7Validator extends Component {
 	render() {
 		console.log('this.state', this.state);
 
-		const displayFailures = this.state.failures.map(failure => {
+		const arrOfJSX_FailureList = this.state.failures.map(failure => {
 			return (
 				<li>
 					<strong>ISSUE: </strong>
@@ -60,14 +61,13 @@ export default class HL7Validator extends Component {
 					<h1>Paste your HL7 below to begin</h1>
 					<textarea id="hl7-textarea" onChange={this.handleChange} />
 				</div>
-				<div id="results">
-					<h2>Results:</h2>
-					<p>{this.state.failCount} Failure(s)</p>
-					<p id="severity-score-display">
-						Total Severity Score: {this.state.severityScore}
-					</p>
-					<ul>{displayFailures}</ul>
-				</div>
+				<ResultsDisplay
+					title="Results"
+					count={this.state.failCount}
+					countOfWhat="Failures"
+					severityScore={this.state.severityScore}
+					list={arrOfJSX_FailureList}
+				/>
 			</div>
 		);
 	}

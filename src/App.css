@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 120px;
   padding: 20px;
   color: white;
 }
@@ -34,18 +34,15 @@
 /*HL7Validator CSS below*/
 
 textarea {
-  width: 700px;
+  width: 50%;
   height: 260px;
 }
 
 /*temp*/
-h1 {
-  margin-right: 100px;
-}
 
 #useful-utilities {
   float: left;
-  margin: 100px;
+  margin: 80px;
   padding: 25px;
   width: 200px;
   height: 200px;
@@ -54,7 +51,7 @@ h1 {
 }
 
 #container {
-  margin-right: 380px;
+  margin-right: 10%;
 }
 
 #results {
@@ -67,10 +64,6 @@ h1 {
 #severity-score-display {
   color: red;
   font-weight: bold;
-}
-
-ul {
-  list-style-type: none;
 }
 
 li {
