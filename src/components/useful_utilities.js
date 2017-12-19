@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import deidentify from '../logic/deidentify';
 
 var sampleHL7 =
 	'MSH|^~&|HIHLSCA-228913|TBHC|||20170523135425||ADT^A08|21611171045002504401|P|2.3|||NE|NE\n' +
@@ -12,8 +13,19 @@ var sampleHL7 =
 	'ZEG|||U|||||||||||||||||||||||||||||||||||||A|N|N||||||AAAA  ^NOPCP^PRIMARYCARE';
 
 export default class UsefulUtilities extends Component {
+	constructor(props) {
+		super(props);
+
+		this.handleClick = this.handleClick.bind(this);
+		this.handleClick2 = this.handleClick2.bind(this);
+	}
+
 	handleClick() {
 		document.getElementById('hl7-textarea').value = sampleHL7;
+	}
+
+	handleClick2() {
+		document.getElementById('hl7-textarea').value = deidentify();
 	}
 
 	render() {
@@ -21,7 +33,7 @@ export default class UsefulUtilities extends Component {
 			<div id="useful-utilities">
 				<h3>Useful utilities</h3>
 				<button onClick={this.handleClick}>Generate Sample HL7</button>
-				<button>De-identify HL7</button>
+				<button onClick={this.handleClick2}>De-identify HL7</button>
 			</div>
 		);
 	}

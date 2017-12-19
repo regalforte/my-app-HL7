@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import checker from '../checker.js';
+import checker from '../logic/checker.js';
 import ResultsDisplay from './results_display';
 
 export default class HL7Validator extends Component {

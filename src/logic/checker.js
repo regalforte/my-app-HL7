@@ -15,6 +15,10 @@ const checker = userInput => {
 	check4thCharIsPipe();
 
 	//regex validations:
+	checkField('EVN', 1, '^A\\d\\d$', {
+		description: 'Event type code should be A followed by 2 digits',
+		severity: 1,
+	});
 	checkField('PID', 5, '^[A-Za-z^".]+$', {
 		description: 'Numbers or unexpected symbols detected in patient name',
 		severity: 1,
@@ -27,6 +31,10 @@ const checker = userInput => {
 		description:
 			'DOB should consist of at least exactly 8 digits (no letters, no symbols)',
 		severity: 2,
+	});
+	checkField('PID', 11, '^.+(US|United State).+$', {
+		description: 'Country should be US',
+		severity: 1,
 	});
 	checkField('CON', 11, '^.$', {
 		description: 'Consent value should be a single character',
@@ -94,17 +102,6 @@ function checkField(segment, nthField, regexAsString, failure, checkExist) {
 			}
 		}
 	});
-}
-
-//TEST
-function getLineBySegment(segment) {
-	var strToReturn = null;
-	arrayOfEachLine.forEach(line => {
-		if (line.substring(0, 3) === segment) {
-			strToReturn = line;
-		}
-	});
-	return strToReturn;
 }
 
 function pushFailureIfUnique(newFailure) {
