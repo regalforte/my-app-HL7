@@ -50,7 +50,7 @@ export default class HL7Validator extends Component {
 				<li>
 					<strong>ISSUE: </strong>
 					{failure.description}
-					<strong> - (Severity: {failure.severity})</strong>
+					<strong> - (Points deducted: {failure.severity})</strong>
 				</li>
 			);
 		});

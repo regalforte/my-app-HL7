@@ -10,7 +10,7 @@ class ResultsDisplay extends Component {
 					{this.props.count} {this.props.countOfWhat}(s)
 				</p>
 				<p id="severity-score-display">
-					Total Severity Score: {this.props.severityScore}
+					Total Score: {100 - this.props.severityScore}
 				</p>
 				<ul>{this.props.list}</ul>
 			</div>
