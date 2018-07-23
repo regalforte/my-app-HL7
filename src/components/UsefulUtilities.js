@@ -13,27 +13,28 @@ var sampleHL7 =
 	'ZEG|||U|||||||||||||||||||||||||||||||||||||A|N|N||||||AAAA  ^NOPCP^PRIMARYCARE';
 
 export default class UsefulUtilities extends Component {
-	constructor(props) {
-		super(props);
-
-		this.handleClick = this.handleClick.bind(this);
-		this.handleClick2 = this.handleClick2.bind(this);
-	}
-
-	handleClick() {
+	handleClick = () => {
 		document.getElementById('hl7-textarea').value = sampleHL7;
 	}
 
-	handleClick2() {
+	handleClick2 = () => {
 		document.getElementById('hl7-textarea').value = deidentify();
 	}
 
 	render() {
+		let switchToButtonText;
+		if (this.props.currentView === 'HL7') {
+			switchToButtonText = 'Switch To Detailed View';
+		} else if (this.props.currentView === 'detailed-view') {
+			switchToButtonText = 'Switch to HL7 View';
+		}
+
 		return (
 			<div id="useful-utilities">
 				<h3>Useful utilities</h3>
-				<button onClick={this.handleClick}>Generate Sample HL7</button>
+				<button onClick={() => this.props.handleUpdateHL7Text(sampleHL7)}>Generate Sample HL7</button>
 				<button onClick={this.handleClick2}>De-identify HL7</button>
+				<button onClick={this.props.handleSwitchView}>{switchToButtonText}</button>
 			</div>
 		);
 	}
