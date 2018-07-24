@@ -15,7 +15,7 @@ export default class UsefulUtilities extends Component {
 	render() {
 		let switchToButtonText;
 		if (this.props.currentView === 'HL7') {
-			switchToButtonText = 'Switch To Results View';
+			switchToButtonText = 'Switch to Results View';
 		} else if (this.props.currentView === 'results-view') {
 			switchToButtonText = 'Switch to HL7 View';
 		}
