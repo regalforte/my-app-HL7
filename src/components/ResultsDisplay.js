@@ -4,12 +4,12 @@ class ResultsDisplay extends Component {
 	render() {
 		return (
 			<div id="results">
-				<h2>{this.props.title}</h2>
-				<p>
-					{this.props.count} {this.props.countOfWhat}(s)
-				</p>
+				<h2>Results:</h2>
+				<h4>
+					{this.props.count} {this.props.count === 1 ? <span>Failure</span> : <span>Failures</span>}
+				</h4>
 				<p id="severity-score-display">
-					Total Score: {100 - this.props.severityScore}
+					Total Score: {100 - this.props.severityScore}/100
 				</p>
 				<ul>{this.props.list}</ul>
 			</div>

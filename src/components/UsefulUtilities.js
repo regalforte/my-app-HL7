@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import deidentify from '../logic/deidentify';
 
 var sampleHL7 =
 	'MSH|^~&|HIHLSCA-228913|TBHC|||20170523135425||ADT^A08|21611171045002504401|P|2.3|||NE|NE\n' +
@@ -10,22 +9,14 @@ var sampleHL7 =
 	'GT1|0001||TEST^IBE||123 HELLO AVE^^BROOKLYN^NY^12345^US^^^KING|(123)456-7890||19550523|M||SLF^SELF|||||||||U||||||||||S\n' +
 	'IN1|0001|SLFJ||SELF-PAY|||||||||||P|TEST^IBE|SLF^SELF|19550523|123 HELLO AVE^^BROOKLYN^NY^12345^US^^^KING|||||||||||||||||||||||U|M\n' +
 	'IN2|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||(123)456-7890\n' +
-	'ZEG|||U|||||||||||||||||||||||||||||||||||||A|N|N||||||AAAA  ^NOPCP^PRIMARYCARE';
+	'CON|||||||||||Y|||20180724|';
 
 export default class UsefulUtilities extends Component {
-	handleClick = () => {
-		document.getElementById('hl7-textarea').value = sampleHL7;
-	}
-
-	handleClick2 = () => {
-		document.getElementById('hl7-textarea').value = deidentify();
-	}
-
 	render() {
 		let switchToButtonText;
 		if (this.props.currentView === 'HL7') {
 			switchToButtonText = 'Switch To Detailed View';
-		} else if (this.props.currentView === 'detailed-view') {
+		} else if (this.props.currentView === 'results-view') {
 			switchToButtonText = 'Switch to HL7 View';
 		}
 
@@ -33,7 +24,7 @@ export default class UsefulUtilities extends Component {
 			<div id="useful-utilities">
 				<h3>Useful utilities</h3>
 				<button onClick={() => this.props.handleUpdateHL7Text(sampleHL7)}>Generate Sample HL7</button>
-				<button onClick={this.handleClick2}>De-identify HL7</button>
+				<button onClick={this.props.handleDeidentifyClick}>De-identify HL7</button>
 				<button onClick={this.props.handleSwitchView}>{switchToButtonText}</button>
 			</div>
 		);

@@ -59,7 +59,7 @@ textarea {
   padding-left: 50px;
 }
 
-#severity-score-display {
+#severity-score-display, #red {
   color: red;
   font-weight: bold;
 }

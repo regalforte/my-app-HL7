@@ -1,0 +1,7 @@
+Added segment and field # next to each issue (Suggested by Naitik)
+Deducted points if the CON segment is not at the very end (Suggested by Sheetal)
+Included CON segment when generating a sample HL7 (Suggested by Sheetal)
+Changes the label from "ISSUE" to "MANDATORY FIX REQUIRED" if the fix is critical (Suggested by Sana)
+Only runs consent validations if a CON segment exists, else skip consent validations
+BUG FIX: Clicking the De-identify HL7 button now correctly re-renders the score.
+BUG FIX: Fixed a bug where clicking on De-identify HL7 when the textarea is empty crashes the application
